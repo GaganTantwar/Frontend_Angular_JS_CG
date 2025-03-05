@@ -13,6 +13,8 @@ export class AppComponent {
   imageUrl="../assets/BL_logo_square_jpg.jpg";
   url="https://www.bridgelabz.com";
   userName: string="";
+  nameError: String = "";
+
   ngOnInit():void{
     this.title="Hello From BridgeLab"
   }
@@ -20,4 +22,14 @@ export class AppComponent {
     console.log("Save Button is clicked",$event);
     window.open(this.url,"_blank");
   }
+  onInput($event:any){
+    console.log("Change Event Occurred!", $event.data);
+    const nameRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{2,}$');
+    if (nameRegex.test(this.userName)) {
+      this.nameError = "";
+      return;
+    }
+    this.nameError = "Name is Incorrect!";
+  }
+
 }
