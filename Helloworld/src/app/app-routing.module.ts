@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
-// Define your routes here
+//Define routes
 const routes: Routes = [
   // Example:
   // { path: 'home', component: HomeComponent }
